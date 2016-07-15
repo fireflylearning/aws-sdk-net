@@ -567,7 +567,6 @@ namespace Firefly.Amazon.SessionProvider
             else
             {
                 Document expected = new Document();
-                expected[ATTRIBUTE_LOCK_ID] = lockId.ToString();
 
                 // Not really any reason the condition should fail unless we get in some sort of weird
                 // app pool reset mode.
