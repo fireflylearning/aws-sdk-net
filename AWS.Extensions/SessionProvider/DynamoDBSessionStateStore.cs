@@ -24,6 +24,7 @@ using System.Web.SessionState;
 using System.Text;
 using System.Threading;
 
+using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
@@ -31,7 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
-namespace Amazon.SessionProvider
+namespace Firefly.Amazon.SessionProvider
 {
     /// <summary>
     /// DynamoDBSessionStateStore is a custom session state provider that can be used inside of an ASP.NET application. Session state is saved 
@@ -127,7 +128,6 @@ namespace Amazon.SessionProvider
             CONSISTENT_READ_GET.ConsistentRead = true;
 
             LOCK_UPDATE_CONFIG.Expected = new Document();
-            LOCK_UPDATE_CONFIG.Expected[ATTRIBUTE_LOCKED] = false;
             LOCK_UPDATE_CONFIG.ReturnValues = ReturnValues.AllNewAttributes;
         }
 
@@ -567,7 +567,6 @@ namespace Amazon.SessionProvider
             else
             {
                 Document expected = new Document();
-                expected[ATTRIBUTE_LOCK_ID] = lockId.ToString();
 
                 // Not really any reason the condition should fail unless we get in some sort of weird
                 // app pool reset mode.
@@ -600,7 +599,6 @@ namespace Amazon.SessionProvider
             doc[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
 
             Document expected = new Document();
-            expected[ATTRIBUTE_LOCK_ID] = lockId.ToString();
 
             try
             {

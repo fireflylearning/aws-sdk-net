@@ -8,8 +8,8 @@
     <ProjectGuid>{65DD8109-6DA4-46A7-A29E-DE712F85010A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon</RootNamespace>
-    <AssemblyName>AWS.SessionProvider</AssemblyName>
+    <RootNamespace>Firefly.Amazon</RootNamespace>
+    <AssemblyName>Firefly.AWS.SessionProvider</AssemblyName>
     <TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\$(Configuration) $(TargetFrameworkVersion)\AWS.SessionProvider.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug v3.5\Firefly.AWS.SessionProvider.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,7 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\$(Configuration) $(TargetFrameworkVersion)\AWS.SessionProvider.xml</DocumentationFile>
+    <DocumentationFile>bin\Release v3.5\Firefly.AWS.SessionProvider.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v3.5' ">
     <DefineConstants>NET35</DefineConstants>
